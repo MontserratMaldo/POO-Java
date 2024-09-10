@@ -6,10 +6,10 @@ public class Calificaciones {
         Scanner sc = new Scanner(System.in);
         
         System.out.print("Ingrese el número de materias: ");
-        int numMaterias = sc.nextInt();
+        int numero_materias = sc.nextInt();
         
-        int[] creditos = new int[numMaterias];
-        double[] calificaciones = new double[numMaterias];
+        int[] creditos = new int[numero_materias];
+        double[] calificaciones = new double[numero_materias];
         
         ingresarDatos(creditos, calificaciones, sc);
         
@@ -27,28 +27,28 @@ public class Calificaciones {
     }
 
     public static void calcularYMostrarPromedioPonderado(int[] creditos, double[] calificaciones) {
-        double sumaPonderada = 0;
-        int sumaCreditos = 0;
+        double suma_ponderada = 0;
+        int suma_creditos = 0;
         
         System.out.println("\nCRÉDITOS\tCALIFICACIONES\tTOTAL");
         
         for (int i = 0; i < creditos.length; i++) {
             double total = calificaciones[i] * creditos[i];
-            sumaPonderada += total;
-            sumaCreditos += creditos[i];
+            suma_ponderada += total;
+            suma_creditos += creditos[i];
             System.out.printf("%d\t\t%.1f\t\t\t%.1f\n", creditos[i], calificaciones[i], total);
         }
         
         System.out.println("------------------------------------------------");
-        System.out.printf("%d\t\t\t\t\t%.1f\n", sumaCreditos, sumaPonderada);
+        System.out.printf("%d\t\t\t\t\t%.1f\n", suma_creditos, suma_ponderada);
         
-        if (sumaCreditos == 0) {
+        if (suma_creditos == 0) {
             System.out.println("No se puede calcular el promedio ponderado (suma de créditos es 0).");
             return;
         }
         
-        double promedioPonderado = sumaPonderada / sumaCreditos;
-        System.out.printf("\nPromedio Ponderado = %.2f\n", promedioPonderado);
+        double promedio_ponderado = suma_ponderada / suma_creditos;
+        System.out.printf("\nPromedio Ponderado = %.2f\n", promedio_ponderado);
     }
     
 }
