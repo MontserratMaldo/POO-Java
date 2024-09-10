@@ -3,26 +3,26 @@ import java.util.Scanner;
 public class Calificaciones {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         
         System.out.print("Ingrese el número de materias: ");
-        int numero_materias = sc.nextInt();
+        int numero_materias = input.nextInt();
         
         int[] creditos = new int[numero_materias];
         double[] calificaciones = new double[numero_materias];
         
-        ingresarDatos(creditos, calificaciones, sc);
+        ingresarDatos(creditos, calificaciones, input);
         
         calcularYMostrarPromedioPonderado(creditos, calificaciones);
         
     }
 
-    public static void ingresarDatos(int[] creditos, double[] calificaciones, Scanner sc) {
+    public static void ingresarDatos(int[] creditos, double[] calificaciones, Scanner input) {
         for (int i = 0; i < creditos.length; i++) {
             System.out.print("Ingrese los créditos de la materia " + (i + 1) + ": ");
-            creditos[i] = sc.nextInt();
+            creditos[i] = input.nextInt();
             System.out.print("Ingrese la calificación de la materia " + (i + 1) + ": ");
-            calificaciones[i] = sc.nextDouble();
+            calificaciones[i] = input.nextDouble();
         }
     }
 
